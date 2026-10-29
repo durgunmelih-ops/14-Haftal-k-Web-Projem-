@@ -97,3 +97,401 @@ Problem ve çözüm özeti
 Problem: Arkadaş ortamında “sen hangi kitapları okudun?” diye sorulduğunda okuduğumuz kitapları tam hatırlayamıyoruz. Kitaplar hakkında konuşmak, tartışmak ve bilgi aktarmak zorlaşıyor, sohbet yüzeyde kalıyor.
 Çözüm: Okuduğum her kitabı kısa bilgileriyle (ad, yazar, puan, kapak, tür, özet ve kendi notum) kaydettiğim, telefondan açıp arkadaşlarıma gösterebileceğim kişisel bir kitap sitesi. Kitaplar tek bir veri dosyasında tutulacak, böylece yeni kitap eklemek ve bakım yapmak kolay olacak.
 30 Ekim 2026 İskelet Ödevi
+ai sorduğum soru: # 14-Haftal-k-Web-Projem-
+# Okuduğum Kitaplar
+Okuduğum kitapları kaydedip arkadaşlarıma gösterebildiğim, kişisel bir kitap sitesi projesi.
+## Problem
+Arkadaş ortamında "sen hangi kitapları okudun?" diye sorulduğunda okuduğumuz kitapları tam olarak hatırlayamıyoruz. Bu yüzden kitaplar hakkında konuşmak, tartışmak ve bilgi aktarmak zorlaşıyor; sohbet derinleşemiyor, yüzeyde kalıyor.
+## Çözüm
+Okuduğum her kitabı kısa bilgileriyle kaydettiğim bir web sitesi yapmak. Soru geldiğinde siteyi telefondan açıp kitaplarımı gösterebileceğim ve onlar üzerinden sohbet edebileceğim. Kitap okudukça siteye yeni kitap ekleyeceğim.
+## Hedef Kitle
+Gençler ve yetişkinler.
+## Planlanan Özellikler
+- Kitap kartları: kitap adı, yazar, puan, kapak görseli, tür etiketi, kısa özet ve kendi notum
+- Kitapların en yeni okunandan eskiye doğru sıralanması
+- Telefonda ve bilgisayarda düzgün görünen (mobil uyumlu) tasarım
+## Kullanılacak Teknolojiler
+- HTML
+- CSS
+verdiği cevap: Gerçekleştirilen Adımlar ve Güncellemeler
+
+A. Tasarım ve Sayfa Yapısı Güncellemeleri
+
+Başlık Alanı Düzenlemesi:
+
+Sayfa başlığının (<h1>) sol tarafında yer alan kitap emojisi (📚) kaldırıldı.
+
+Temiz metin başlığı: <h1>Okuduğum Kitaplar</h1> olarak güncellendi.
+
+Görsel Hizalama ve Boyutlandırma:
+
+Kitap kapak görsellerinin kart alanı içerisindeki duruşunu iyileştirmek için object-fit kuralları belirlendi.
+
+Kapakların oranının bozulmadan tam sığması için object-fit: contain seçeneği yapılandırıldı.
+
+B. "Müthiş Psikoloji" Kitap Kartı Entegrasyonu
+
+medu.html içerisine yeni kitap kartı eklendi:
+
+Görsel Yolu: images/muthis-psikoloji.jpg
+
+Tür: Psikoloji
+
+Puan: ⭐ 4.5/5
+
+Özet ve Notlar: Kitap özeti ve kişisel değerlendirme metinleri eklendi.
+
+C. İletişim & Kitap Önerisi Formu Entegrasyonu
+
+Kitap kartlarının altına, <footer> etiketinin hemen üstüne yeni bir iletişim bölümü eklendi.
+
+Form Alanları:
+
+Adınız (👤)
+
+Önerdiğiniz Kitap (📖)
+
+Hissettikleriniz & Düşünceleriniz (✨)
+
+E-Posta Servisi: Form verilerinin e-posta adresine düşmesini sağlamak amacıyla Formspree altyapısına uygun POST yönlendirmesi kuruldu.
+
+Görsel İyileştirmeler:
+
+Form alanlarına ikonlar, yumuşak geçişli odaklanma (focus) efektleri ve modern gradyan buton eklendi.
+
+📂 3. Güncel Dosya Yapıları ve Kod Kodlamaları
+
+📄 medu.html (Tam Kod Yapısı)
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Okuduğum Kitaplar</title>
+    <link rel="stylesheet" href="medu.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <h1>Okuduğum Kitaplar</h1>
+        <p>Okuduğum kitaplar, bıraktıkları izler ve kişisel notlarım.</p>
+    </header>
+
+    <main class="container">
+        <section class="book-grid">
+            
+            <!-- Müthiş Psikoloji Kitap Kartı -->
+            <article class="book-card">
+                <div class="card-image">
+                    <img src="images/muthis-psikoloji.jpg" alt="Müthiş Psikoloji Kitap Kapağı">
+                    <span class="badge">Psikoloji</span>
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <h2>Müthiş Psikoloji</h2>
+                        <span class="rating">⭐ 4.5/5</span>
+                    </div>
+                    <h3 class="author">Destek Yayınları / Kolektif</h3>
+                    <p class="summary">
+                        <strong>Özet:</strong> Günlük hayatta karşılaştığımız psikolojik süreçleri, insan ilişkilerini ve öz-farkındalığı sade bir dille ele alan rehber niteliğinde bir eser.
+                    </p>
+                    <p class="personal-note">
+                        <strong>Kişisel Notum:</strong> Kendini anlama ve duygusal farkındalık kazanma konusunda oldukça pratik bir başucu kitabı.
+                    </p>
+                </div>
+            </article>
+
+        </section>
+
+        <!-- İletişim ve Kitap Önerisi Formu -->
+        <section class="contact-section">
+            <div class="contact-header">
+                <h2>💬 İletişim & Kitap Önerisi</h2>
+                <p>Bana bir kitap önermek veya hislerinizi paylaşmak ister misiniz?</p>
+            </div>
+            
+            <form class="contact-form" action="https://formspree.io/f/E_POSTA_ADRESINIZ" method="POST">
+                
+                <div class="form-group">
+                    <label for="name">👤 Adınız</label>
+                    <input type="text" id="name" name="name" placeholder="Örn: Ahmet Yılmaz" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="suggested-book">📖 Önerdiğiniz Kitap</label>
+                    <input type="text" id="suggested-book" name="suggested_book" placeholder="Örn: Dünün Dünyası - Stefan Zweig" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="feelings">✨ Hissettikleriniz & Düşünceleriniz</label>
+                    <textarea id="feelings" name="feelings" rows="4" placeholder="Bu kitap size ne hissettirdi, neden okumalıyım?" required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <span>Öneriyi Gönder</span> ✨
+                </button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Kişisel Kitap Arşivi</p>
+    </footer>
+
+</body>
+</html>
+
+
+🎨 medu.css (Tam Kod Yapısı)
+
+/* Temel Sıfırlamalar ve Değişkenler */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f6f8;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Başlık Alanı */
+.main-header {
+    text-align: center;
+    padding: 2.5rem 1rem;
+    background-color: #2c3e50;
+    color: #fff;
+}
+
+.main-header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Ana Konteyner ve Grid */
+.container {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+/* Kitap Kartı Stilleri */
+.book-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.book-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.card-image {
+    position: relative;
+    height: 260px;
+    background-color: #f8fafc;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background-color: rgba(44, 62, 80, 0.85);
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.card-content {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.25rem;
+}
+
+.card-header h2 {
+    font-size: 1.25rem;
+    color: #1a202c;
+}
+
+.rating {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #d69e2e;
+}
+
+.author {
+    font-size: 0.95rem;
+    color: #718096;
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+}
+
+.summary, .personal-note {
+    font-size: 0.9rem;
+    color: #4a5568;
+    margin-bottom: 0.6rem;
+}
+
+.personal-note {
+    margin-top: auto;
+    padding-top: 0.6rem;
+    border-top: 1px dashed #e2e8f0;
+    color: #2d3748;
+}
+
+/* Yenilenmiş İletişim ve Form Stilleri */
+.contact-section {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    margin-top: 3.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid #edf2f7;
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.contact-header h2 {
+    color: #2c3e50;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+}
+
+.contact-header p {
+    color: #718096;
+    font-size: 0.95rem;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+    max-width: 580px;
+    margin: 0 auto;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #34495e;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.85rem 1.1rem;
+    background-color: #f8fafc;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    color: #2d3748;
+    outline: none;
+    transition: all 0.25s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #a0aec0;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    background-color: #ffffff;
+    border-color: #3498db;
+    box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.12);
+}
+
+.submit-btn {
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: #ffffff;
+    border: none;
+    padding: 0.95rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 12px rgba(44, 62, 80, 0.2);
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(44, 62, 80, 0.3);
+    background: linear-gradient(135deg, #1a252f, #2c3e50);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    color: #718096;
+    font-size: 0.85rem;
+}
+
+/* Mobil Uyumlu Düzenlemeler */
+@media (max-width: 600px) {
+    .book-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .main-header h1 {
+        font-size: 1.6rem;
+    }
+
+    .contact-section {
+        padding: 1.5rem 1.25rem;
+    }
+}

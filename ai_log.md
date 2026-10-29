@@ -96,3 +96,4 @@ verdiği cevap:Evet, problem ve çözüm konusunda hemfikiriz. İkisi de net, k�
 Problem ve çözüm özeti
 Problem: Arkadaş ortamında “sen hangi kitapları okudun?” diye sorulduğunda okuduğumuz kitapları tam hatırlayamıyoruz. Kitaplar hakkında konuşmak, tartışmak ve bilgi aktarmak zorlaşıyor, sohbet yüzeyde kalıyor.
 Çözüm: Okuduğum her kitabı kısa bilgileriyle (ad, yazar, puan, kapak, tür, özet ve kendi notum) kaydettiğim, telefondan açıp arkadaşlarıma gösterebileceğim kişisel bir kitap sitesi. Kitaplar tek bir veri dosyasında tutulacak, böylece yeni kitap eklemek ve bakım yapmak kolay olacak.
+30 Ekim 2026 İskelet Ödevi

@@ -495,3 +495,414 @@ footer {
         padding: 1.5rem 1.25rem;
     }
 }
+Proje Adı: 14-Haftalık Web Projem - Okuduğum Kitaplar
+
+Tarih: 6 Kasım 2026
+
+Dosya Yapısı:
+
+medu.html (Ana Yapı & İskelet)
+
+medu.css (Görsel Tasarım & Mobil Uyum)
+
+medu.js (Form Doğrulama & İnteraktivite)
+
+📌 Proje Özeti ve Amaç
+
+Okunan kitapların kaydedildiği, mobil ve masaüstü cihazlarda sorunsuz çalışan kişisel bir kitap arşiv sitesi projesi. Projede anlamsal (semantic) HTML5 etiketleri, responsive (mobil uyumlu) CSS Grid yapısı ve form dinamizmini sağlayan JavaScript (DOM Manipülasyonu) kullanılmıştır.
+
+📋 Adım Adım Yapılan Değişiklikler ve Kararlar
+
+1. Başlangıç & Konfigürasyon
+
+Kullanılacak temel dosya isimleri medu.html ve medu.css olarak belirlendi.
+
+Sayfa başlığındaki (<h1>) kitap emojisi (📚) kaldırılarak sade bir başlık oluşturuldu.
+
+2. Kitap Kartları ve Görsel Hizalama
+
+Kitap kapak görsellerinin kart boyutlarına sündürülmeden ve kesilmeden tam sığması için CSS object-fit: contain; kuralı uygulandı.
+
+"Müthiş Psikoloji" kitabı ve detayları HTML kart yapısına eklendi.
+
+3. İletişim & Kitap Önerisi Formu Entegrasyonu
+
+Kitap listesinin altına "İletişim & Kitap Önerisi" alanı eklendi.
+
+Kullanıcıdan Adı, Önerdiği Kitap ve Hissettikleri bilgilerini toplayan form tasarlandı.
+
+Formun arka planda Formspree servisine yönlenmesi sağlandı.
+
+İkonlar, alan odaklanma (focus) efektleri ve gradyan gönder butonu ile form tasarımı geliştirildi.
+
+4. JavaScript Entegrasyonu (medu.js)
+
+Projeye JavaScript dâhil edilerek HTML dosyasının en altına </body> öncesinde <script src="medu.js"></script> şeklinde bağlandı.
+
+Form doğrulama (validation) mekanizması kuruldu:
+
+Kullanıcının eksik/boş alan bırakması veya sadece boşluk tuşuna basması value.trim() ile engellendi.
+
+Hatalı gönderimlerde e.preventDefault() ile sayfa yenilenmesi durduruldu ve kullanıcıya uyarı gösterildi.
+
+💻 Tüm Proje Kodları
+
+📄 medu.html
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Okuduğum Kitaplar</title>
+    <link rel="stylesheet" href="medu.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <h1>Okuduğum Kitaplar</h1>
+        <p>Okuduğum kitaplar, bıraktıkları izler ve kişisel notlarım.</p>
+    </header>
+
+    <main class="container">
+        <section class="book-grid">
+            
+            <!-- Müthiş Psikoloji Kitap Kartı -->
+            <article class="book-card">
+                <div class="card-image">
+                    <img src="images/muthis-psikoloji.jpg" alt="Müthiş Psikoloji Kitap Kapağı">
+                    <span class="badge">Psikoloji</span>
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <h2>Müthiş Psikoloji</h2>
+                        <span class="rating">⭐ 4.5/5</span>
+                    </div>
+                    <h3 class="author">Destek Yayınları / Kolektif</h3>
+                    <p class="summary">
+                        <strong>Özet:</strong> Günlük hayatta karşılaştığımız psikolojik süreçleri, insan ilişkilerini ve öz-farkındalığı sade bir dille ele alan rehber niteliğinde bir eser.
+                    </p>
+                    <p class="personal-note">
+                        <strong>Kişisel Notum:</strong> Kendini anlama ve duygusal farkındalık kazanma konusunda oldukça pratik bir başucu kitabı.
+                    </p>
+                </div>
+            </article>
+
+        </section>
+
+        <!-- İletişim ve Kitap Önerisi Formu -->
+        <section class="contact-section">
+            <div class="contact-header">
+                <h2>💬 İletişim & Kitap Önerisi</h2>
+                <p>Bana bir kitap önermek veya hislerinizi paylaşmak ister misiniz?</p>
+            </div>
+            
+            <form class="contact-form" action="https://formspree.io/f/E_POSTA_ADRESINIZ" method="POST">
+                
+                <div class="form-group">
+                    <label for="name">👤 Adınız</label>
+                    <input type="text" id="name" name="name" placeholder="Örn: Ahmet Yılmaz" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="suggested-book">📖 Önerdiğiniz Kitap</label>
+                    <input type="text" id="suggested-book" name="suggested_book" placeholder="Örn: Dünün Dünyası - Stefan Zweig" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="feelings">✨ Hissettikleriniz & Düşünceleriniz</label>
+                    <textarea id="feelings" name="feelings" rows="4" placeholder="Bu kitap size ne hissettirdi, neden okumalıyım?" required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <span>Öneriyi Gönder</span> ✨
+                </button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Kişisel Kitap Arşivi</p>
+    </footer>
+
+    <script src="medu.js"></script>
+</body>
+</html>
+
+
+🎨 medu.css
+
+/* Temel Sıfırlamalar ve Değişkenler */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f6f8;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Başlık Alanı */
+.main-header {
+    text-align: center;
+    padding: 2.5rem 1rem;
+    background-color: #2c3e50;
+    color: #fff;
+}
+
+.main-header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Ana Konteyner ve Grid */
+.container {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+/* Kitap Kartı Stilleri */
+.book-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.book-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.card-image {
+    position: relative;
+    height: 260px;
+    background-color: #f8fafc;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background-color: rgba(44, 62, 80, 0.85);
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.card-content {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.25rem;
+}
+
+.card-header h2 {
+    font-size: 1.25rem;
+    color: #1a202c;
+}
+
+.rating {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #d69e2e;
+}
+
+.author {
+    font-size: 0.95rem;
+    color: #718096;
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+}
+
+.summary, .personal-note {
+    font-size: 0.9rem;
+    color: #4a5568;
+    margin-bottom: 0.6rem;
+}
+
+.personal-note {
+    margin-top: auto;
+    padding-top: 0.6rem;
+    border-top: 1px dashed #e2e8f0;
+    color: #2d3748;
+}
+
+/* İletişim ve Form Stilleri */
+.contact-section {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    margin-top: 3.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid #edf2f7;
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.contact-header h2 {
+    color: #2c3e50;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+}
+
+.contact-header p {
+    color: #718096;
+    font-size: 0.95rem;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+    max-width: 580px;
+    margin: 0 auto;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #34495e;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.85rem 1.1rem;
+    background-color: #f8fafc;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    color: #2d3748;
+    outline: none;
+    transition: all 0.25s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #a0aec0;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    background-color: #ffffff;
+    border-color: #3498db;
+    box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.12);
+}
+
+.submit-btn {
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: #ffffff;
+    border: none;
+    padding: 0.95rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 12px rgba(44, 62, 80, 0.2);
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(44, 62, 80, 0.3);
+    background: linear-gradient(135deg, #1a252f, #2c3e50);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    color: #718096;
+    font-size: 0.85rem;
+}
+
+/* Mobil Uyumlu Düzenlemeler */
+@media (max-width: 600px) {
+    .book-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .main-header h1 {
+        font-size: 1.6rem;
+    }
+
+    .contact-section {
+        padding: 1.5rem 1.25rem;
+    }
+}
+
+
+⚡ medu.js
+
+document.addEventListener('DOMContentLoaded', function () {
+    
+    const contactForm = document.querySelector('.contact-form');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', function (e) {
+            
+            const nameInput = document.getElementById('name');
+            const bookInput = document.getElementById('suggested-book');
+            const feelingsInput = document.getElementById('feelings');
+
+            if (nameInput.value.trim() === '' || bookInput.value.trim() === '' || feelingsInput.value.trim() === '') {
+                e.preventDefault();
+                alert('Lütfen tüm alanları doldurunuz! ✨');
+            } else {
+                alert('Öneriniz için teşekkürler! Mesajınız iletiliyor... 📚');
+            }
+        });
+    }
+});

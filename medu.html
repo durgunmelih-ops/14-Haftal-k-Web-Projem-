@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Okuduğum Kitaplar</title>
+    <link rel="stylesheet" href="medu.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <h1> Okuduğum Kitaplar</h1>
+        <p>Arkadaş ortamında "sen hangi kitapları okudun?" diye sorulduğunda okuduğumuz kitapları tam olarak hatırlayamıyoruz. Bu yüzden kitaplar hakkında konuşmak, tartışmak ve bilgi aktarmak zorlaşıyor; sohbet derinleşemiyor, yüzeyde kalıyor.</p>
+        <P>Okuduğum her kitabı kısa bilgileriyle kaydettiğim bir web sitesi yapmak. Soru geldiğinde siteyi telefondan açıp kitaplarımı gösterebileceğim ve onlar üzerinden sohbet edebileceğim. Kitap okudukça siteye yeni kitap ekleyeceğim.</P>
+    </header>
+
+    <main class="container">
+        <section class="book-grid">
+            
+            <!-- Kitap Kartı 1 (En Son Okunan) -->
+            <article class="book-card">
+                <div class="card-image">
+                    <img src="Ekran görüntüsü 2026-10-29 214955.png" alt="Kitap Kapak">
+                    <span class="badge">Psikoloji</span>
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <h2> Müthiş Psikoloji Hayır Diyebilme Sanatı</h2>
+                        <span class="rating">⭐ 4.5/5</span>
+                    </div>
+                    <h3 class="author">Destek Yayınları</h3>
+                    <p class="summary">
+                        <strong>Özet:</strong> "Başkalarının beklentilerini karşılamak için harcadığınız hayat, sizin kendi hayatınız olmaktan çıkar. Kendi sınırlarınızı çizmek sevgisizlik değil; hem kendinize hem de ilişkilerinize duyduğunuz dürüst ve derin saygının bir göstergesidir."
+                    </p>
+                    <p class="personal-note">
+                        <strong>Kişisel Notum:</strong> Farkındalık kazanmanız açısından ve karakterinizi şekillendirmenize yardımcı olacak bir kitap.
+                    </p>
+                </div>
+            </article>
+
+            <!-- Kitap Kartı 2 -->
+            <article class="book-card">
+                <div class="card-image">
+                    <img src="images/kitap2.jpg" alt="Kitap Kapak">
+                    <span class="badge">Klasik</span>
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <h2>Simyacı</h2>
+                        <span class="rating">⭐ 5/5</span>
+                    </div>
+                    <h3 class="author">Paulo Coelho</h3>
+                    <p class="summary">
+                        <strong>Özet:</strong> İspanya'dan Mısır piramitlerine kendi kişisel menkıbesini aramaya giden Endülüslü çoban Santiago'nun masalsı yaşam yolu.
+                    </p>
+                    <p class="personal-note">
+                        <strong>Kişisel Notum:</strong> Kendi yolunu çizmek isteyen herkesin okuması gereken ilham verici bir klasik.
+                    </p>
+                </div>
+            </article>
+
+        </section>
+    </main>
+</section> <!-- Kitap kartlarının bittiği yer -->
+
+        <!-- YENİ EKLENECEK KISIM BURADAN BAŞLIYOR -->
+        <!-- İletişim ve Kitap Önerisi Formu -->
+        <section class="contact-section">
+            <div class="contact-header">
+                <h2>💬 İletişim & Kitap Önerisi</h2>
+                <p>Bana bir kitap önermek veya hislerinizi paylaşmak ister misiniz?</p>
+            </div>
+            
+            <!-- E_POSTA_ADRESINIZ kısmını kendi Formspree ID'niz veya mailiniz ile değiştirin -->
+            <form class="contact-form" action="https://formspree.io/f/E_POSTA_ADRESINIZ" method="POST">
+                
+                <div class="form-group">
+                    <label for="name">👤 Adınız</label>
+                    <input type="text" id="name" name="name" placeholder="Örn: Ahmet Yılmaz" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="suggested-book">📖 Önerdiğiniz Kitap</label>
+                    <input type="text" id="suggested-book" name="suggested_book" placeholder="Örn: Dünün Dünyası - Stefan Zweig" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="feelings">✨ Hissettikleriniz & Düşünceleriniz</label>
+                    <textarea id="feelings" name="feelings" rows="4" placeholder="Bu kitap size ne hissettirdi, neden okumalıyım?" required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <span>Öneriyi Gönder</span> 
+                </button>
+            </form>
+        </section>
+        </main>
+
+    <footer>
+        <p>&copy; 2026 - Kişisel Kitap Arşivi</p>
+    </footer>
+
+    <!-- JavaScript dosyamız -->
+    <script src="medu.js"></script>
+</body>
+</html>
